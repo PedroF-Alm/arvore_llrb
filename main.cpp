@@ -6,7 +6,7 @@ using namespace std;
 int main(){
     setlocale(LC_ALL, "portuguese");
 
-    RB *rb = RB::criar(1);
+    LLRB *rb = LLRB::criar(1);
 
     int i, N = 9, val[9] = {11,2,1,5,4,7,8,14,15};
 

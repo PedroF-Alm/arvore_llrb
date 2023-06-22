@@ -17,14 +17,14 @@ struct no
     int cor;
 };
 
-RB::RB()
+LLRB::LLRB()
 {
 
 }
 
-RB* RB::criar(int valor)
+LLRB* LLRB::criar(int valor)
 {
-    RB* novaRB = new RB();
+    LLRB* novaRB = new LLRB();
 
     novaRB->raiz = (NO) malloc(sizeof(struct no));
     if (novaRB->raiz == NULL)
@@ -66,12 +66,12 @@ void liberarNO(NO H)
     H = NULL;
 }
 
-RB::~RB()
+LLRB::~LLRB()
 {
     liberarNO(raiz);
 }
 
-int RB::buscar(int valor)
+int LLRB::buscar(int valor)
 {
     if(raiz == NULL)
         return 0;
@@ -159,7 +159,7 @@ NO inserirNO(NO H, int valor, int *resp)
     return H;
 }
 
-int RB::inserir(int valor)
+int LLRB::inserir(int valor)
 {
     int resp;
 
@@ -271,7 +271,7 @@ NO removerNO(NO H, int valor)
     return balancear(H);
 }
 
-int RB::remover(int valor)
+int LLRB::remover(int valor)
 {
     if(buscar(valor))
     {
@@ -285,7 +285,7 @@ int RB::remover(int valor)
         return 0;
 }
 
-int RB::vazia(){
+int LLRB::vazia(){
     if(raiz == NULL)
         return 1;
         
@@ -303,7 +303,7 @@ int totalNO(NO raiz){
     return (alt_esq + alt_dir + 1);
 }
 
-int RB::numNos()
+int LLRB::numNos()
 {
     return totalNO(raiz);
 }
@@ -321,12 +321,12 @@ int alturaNO(NO raiz){
         return(alt_dir + 1);
 }
 
-int RB::altura()
+int LLRB::altura()
 {
     return alturaNO(raiz);
 }
 
-void RB::largura()
+void LLRB::largura()
 {
     std::queue<NO> f;
     f.push(raiz);
@@ -347,7 +347,7 @@ void exibirNO(NO H)
     std::cout << H->chave << " é " << (cor(H) ? "Rubro" : "Negro");
 }
 
-void RB::percurso(NO raiz, int tipo)
+void LLRB::percurso(NO raiz, int tipo)
 {
     if (raiz == NULL)
         return;
@@ -375,17 +375,17 @@ void RB::percurso(NO raiz, int tipo)
     }
 }
 
-void RB::preOrdem()
+void LLRB::preOrdem()
 {
     percurso(raiz, PRE_ORDEM);
 }
 
-void RB::emOrdem()
+void LLRB::emOrdem()
 {
     percurso(raiz, EM_ORDEM);
 }
 
-void RB::posOrdem()
+void LLRB::posOrdem()
 {
     percurso(raiz, POS_ORDEM);
 }

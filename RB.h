@@ -1,21 +1,24 @@
+// Site para simulação da LLRB padrão 
+// https://portaldoprofessor.fct.unesp.br/projetos/cadilag/apps/structs/arv_rn.php
+
 typedef struct no* NO;
 
-class RB 
+class LLRB 
 {
     private:
         NO raiz;
         void percurso(NO raiz, int tipo);
-        RB();
+        LLRB();
     public:
-        static RB* criar(int valor);
-        ~RB();
+        static LLRB* criar(int valor);
+        ~LLRB();
         /*Função para inserir na Árvore 
-        Entrada: valor a ser inserido na RB
+        Entrada: valor a ser inserido na LLRB
         Saida : 0 para erro 1 para sucesso 
         */
         int inserir(int valor);
         /*Função para remover na Árvore 
-        Entrada: valor a ser removido na RB
+        Entrada: valor a ser removido na LLRB
         Saida : 0 para erro 1 para sucesso 
         */
         int remover(int valor);
